@@ -64,8 +64,8 @@ $factory->define(\App\Driver::class, function (Faker $faker){
 $factory->define(\App\Booking::class, function (Faker $faker){
     return [
         'customer_id' => $faker->randomFloat(0,1,100),
-        'car_id' => $faker->randomFloat(0,1,35),
-        'driver_id' => $faker->randomFloat(0,1,30),
+        'car_id' => $faker->randomFloat(0,1,100),
+        'driver_id' => $faker->randomFloat(0,1,100),
         'pickup_date' => $faker->dateTime,
         'drop_date' => $faker->dateTime,
         'total' => $faker->numberBetween(10000,90000),
