@@ -15,7 +15,7 @@ class CreateTableCar extends Migration
     {
         Schema::create('car', function (Blueprint $table) {
             $table->bigIncrements('car_id');
-            $table->unsignedBigInteger("model_id");
+            $table->unsignedBigInteger("carmodel_id");
             $table->string('car_plate')->unique();
             $table->string('car_color');
             $table->year('manufacture_year');
@@ -32,8 +32,5 @@ class CreateTableCar extends Migration
     public function down()
     {
         Schema::dropIfExists('car');
-        Schema::table('car', function (Blueprint $table) {
-            $table->foreign("model_id")->references("model_id")->on("model");
-        });
     }
 }

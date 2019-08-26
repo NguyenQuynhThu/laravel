@@ -9,8 +9,7 @@ class Car extends Model
     protected $table = 'car';
     protected $primaryKey = 'car_id';
     protected $fillable = [
-        "car_name",
-        "model_id",
+        "carmodel_id",
         "car_plate",
         "car_color",
         "manufacture_year",
