@@ -16,6 +16,7 @@ class UpdateTableBooking extends Migration
         Schema::table('booking', function (Blueprint $table) {
             $table->foreign("customer_id")->references("customer_id")->on("customer");
             $table->foreign("car_id")->references("car_id")->on("car");
+            $table->foreign("driver_id")->references("driver_id")->on("driver");
         });
     }
 
@@ -29,6 +30,7 @@ class UpdateTableBooking extends Migration
         Schema::table('booking', function (Blueprint $table) {
             $table->dropForeign(["customer_id"]);
             $table->dropForeign(["car_id"]);
+            $table->dropForeign(["driver_id"]);
         });
     }
 }

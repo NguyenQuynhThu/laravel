@@ -17,6 +17,7 @@ class CreateTableBooking extends Migration
             $table->bigIncrements('booking_id');
             $table->unsignedBigInteger("customer_id");
             $table->unsignedBigInteger("car_id");
+            $table->unsignedBigInteger("driver_id");
             $table->date("pickup_date");
             $table->date("drop_date");
             $table->integer("total");
