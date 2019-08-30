@@ -36,4 +36,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(){
+        if($this->admin == self::ADMIN){
+            return true;
+        }
+        return false;
+    }
 }

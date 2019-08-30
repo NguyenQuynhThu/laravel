@@ -36,7 +36,7 @@ $factory->define(\App\CarModel::class, function (Faker $faker) {
 
 $factory->define(\App\Car::class, function (Faker $faker) {
     return [
-        'carmodel_id' => $faker->randomFloat(0,1,100),
+        'carmodel_id' => $faker->randomFloat(0,1,30),
         'car_plate' => $faker->buildingNumber,
         'car_color' => $faker->colorName,
         'manufacture_year' => $faker->year,
