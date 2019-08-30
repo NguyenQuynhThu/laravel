@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
         //$this->call(factory(App\Car::class, 100)->create());
         //$this->call(factory(App\Customer::class,100)->create());
         //$this->call(factory(App\Driver::class,100)->create());
-        //$this->call(factory(App\Booking::class,100)->create());
-        $this->call(UsersTableSeeder::class);
+        //this->call(factory(App\Booking::class,100)->create());
 
+        //$this->call(UsersTableSeeder::class);
     }
 }

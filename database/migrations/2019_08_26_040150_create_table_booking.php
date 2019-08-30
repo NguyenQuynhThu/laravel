@@ -21,6 +21,7 @@ class CreateTableBooking extends Migration
             $table->date("pickup_date");
             $table->date("drop_date");
             $table->integer("total");
+            $table->unsignedTinyInteger("active")->default(1);
             $table->timestamps();
         });
     }

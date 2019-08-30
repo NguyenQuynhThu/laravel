@@ -57,7 +57,7 @@ $factory->define(\App\Driver::class, function (Faker $faker){
     return [
         'driver_name' => $faker->lastName,
         'driver_phone' => $faker->phoneNumber,
-        'driver_license' => $faker->phoneNumber,
+        'driver_license' => $faker->bankAccountNumber,
     ];
 });
 
