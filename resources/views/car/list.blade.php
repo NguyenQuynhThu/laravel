@@ -36,12 +36,12 @@
                             </div>
                             <div class="clearfix">
                                 <a href="/add-car" class="btn btn-info float-right">Add car</a>
-                                {{--@if(Session::has("success"))
+                                @if(Session::has("success"))
                                     <p style="color: green">{{Session::get("success")}}</p>
                                 @endif
                                 @if($errors->has("fail"))
                                     <p style="color: red">{{$errors->first("fail")}}</p>
-                                @endif--}}
+                                @endif
                             </div>
                         </div>
 
@@ -63,7 +63,7 @@
                                     @foreach($cars as $car)
                                         <tr>
                                             <td>{{$car->car_id}}</td>
-                                            <td>{{$car->carmodel_id}}</td>
+                                            <td>{{$car->getCarModel->carmodel_name}}</td>
                                             <td>{{$car->car_plate}}</td>
                                             <td>{{$car->car_color}}</td>
                                             <td>{{$car->manufacture_year}}</td>

@@ -24,10 +24,16 @@ class Car extends Model
         self::ACTIVE => "Active",
         self::DEACTIVE => "Deactive",
     ];
-//    public function getStatus(){
-//        if($this->active){
-//            return "Active";
-//        }
-//        return "Deactive";
-//    }
+
+    public function getStatus(){
+        if($this->active){
+            return "Active";
+        }
+        return "Deactive";
+    }
+
+    public function getCarModel(){
+        return $this->belongsTo("App\CarModel", "carmodel_id");
+    }
+
 }

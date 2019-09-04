@@ -16,10 +16,9 @@ class UserController extends Controller
     //Cac ham view
     public function carList()
     {
-        $cars = Car::leftJoin("carmodel", "car.carmodel_id", "=", "carmodel.carmodel_id")
-            ->paginate(20, ["car.car_id", "carmodel.carmodel_name as carmodel_id", "car.car_plate",
-                "car.car_color", "car.manufacture_year", "car.active"]);
-
+        $cars = Car::where("active",1)
+            ->with("getCarModel")
+            ->paginate(20);
         return view("car.list", compact("cars"));
     }
 
