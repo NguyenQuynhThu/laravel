@@ -30,7 +30,7 @@
                         <div class="stat-content">
                             <div class="text-left dib">
                                 <div class="stat-text"><span class="count">3435</span></div>
-                                <div class="stat-heading">Sales</div>
+                                <div class="stat-heading">Bookings</div>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         <div class="stat-content">
                             <div class="text-left dib">
                                 <div class="stat-text"><span class="count">349</span></div>
-                                <div class="stat-heading">Templates</div>
+                                <div class="stat-heading">Cars</div>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="stat-content">
                             <div class="text-left dib">
                                 <div class="stat-text"><span class="count">2986</span></div>
-                                <div class="stat-heading">Clients</div>
+                                <div class="stat-heading">Customers</div>
                             </div>
                         </div>
                     </div>
