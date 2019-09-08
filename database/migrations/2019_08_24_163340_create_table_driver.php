@@ -17,7 +17,7 @@ class CreateTableDriver extends Migration
             $table->bigIncrements('driver_id');
             $table->string('driver_name');
             $table->string('driver_phone');
-            $table->string('driver_license')->unique();
+            $table->string('driver_license');
             $table->unsignedTinyInteger('active')->default(1);
             $table->timestamps();
         });

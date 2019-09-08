@@ -17,7 +17,6 @@
                                 <li><a href="#">Dashboard</a></li>
                                 <li><a href="#">Table</a></li>
                                 <li class="active"><a href="/view-booking">Bookings</a></li>
-                                <li class="active">Add Booking</li>
                             </ol>
                         </div>
                     </div>
@@ -32,19 +31,20 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="col-sm-6">
-                                <h3 class="font-weight-bold">ADD BOOKING</h3>
+                                <h3 class="font-weight-bold">EDIT BOOKING</h3>
                             </div>
                         </div>
 
                         <div class="p-4">
-                            <form action="{{url("/add-booking")}}" method="post">
+                            <form action="{{url("/edit-booking")}}" method="post">
                                 @csrf
+                                <input type="hidden" name="booking_id" value="{{$booking->booking_id}}">
                                 <div class="form-group">
                                     <label>Customer</label>
                                     <select name="customer_id" class="form-control">
                                         @foreach($customers as $customer)
                                             <option value="{{$customer->customer_id}}"
-                                                    @if($customer->customer_id == old("customer_id")) selected @endif>
+                                                    @if($customer->customer_id == $booking->customer_id) selected @endif>
                                                 {{$customer -> customer_name}}
                                             </option>
                                         @endforeach
@@ -56,7 +56,7 @@
                                     <select name="car_id" class="form-control">
                                         @foreach($cars as $car)
                                             <option value="{{$car->car_id}}"
-                                                    @if($car->car_id == old("car_id")) selected @endif>
+                                                    @if($car->car_id == $booking->car_id) selected @endif>
                                                 {{$car -> car_plate}}
                                             </option>
                                         @endforeach
@@ -68,7 +68,7 @@
                                     <select name="driver_id" class="form-control">
                                         @foreach($drivers as $driver)
                                             <option value="{{$driver->driver_id}}"
-                                                    @if($driver->driver_id == old("driver_id")) selected @endif>
+                                                    @if($driver->driver_id == $booking->driver_id)) selected @endif>
                                                 {{$driver -> driver_name}}
                                             </option>
                                         @endforeach
@@ -78,7 +78,7 @@
                                 <div class="form-group">
                                     <label>Pickup Date</label>
                                     <input class="form-control" type="text" name="pickup_date"
-                                           value="{{old("pickup_date")}}"
+                                           value="{{$booking->pickup_date}}"
                                            placeholder="Pickup Date">
                                     @if($errors->has("pickup_date"))
                                         <p class="error" style="color: red">{{$errors->first("pickup_date")}}</p>
@@ -88,7 +88,7 @@
                                 <div class="form-group">
                                     <label>Drop Date</label>
                                     <input class="form-control" type="text" name="drop_date"
-                                           value="{{old("drop_date")}}"
+                                           value="{{$booking->drop_date}}"
                                            placeholder="Drop Date">
                                     @if($errors->has("drop_date"))
                                         <p class="error" style="color: red">{{$errors->first("drop_date")}}</p>
@@ -98,7 +98,7 @@
                                 <div class="form-group">
                                     <label>Total</label>
                                     <input class="form-control" type="text" name="total"
-                                           value="{{old("total")}}"
+                                           value="{{$booking->total}}"
                                            placeholder="Total">
                                     @if($errors->has("total"))
                                         <p class="error" style="color: red">{{$errors->first("total")}}</p>
@@ -106,7 +106,7 @@
                                 </div>
 
                                 <div class="form-group text-right">
-                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <button type="submit" class="btn btn-info">Update</button>
                                 </div>
                             </form>
                         </div>

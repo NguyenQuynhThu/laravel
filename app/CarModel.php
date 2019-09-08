@@ -14,4 +14,15 @@ class CarModel extends Model
         "created_at",
         "updated_at",
     ];
+
+    public Const ACTIVE = 1;
+    public Const DEACTIVE = 0;
+    public static $_StatusLabel = [
+        self::ACTIVE => "Active",
+        self::DEACTIVE => "Deactive",
+    ];
+
+    public function getCarQty(){
+        return $this->hasMany("App\Car","carmodel_id","carmodel_id");
+    }
 }
